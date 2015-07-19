@@ -7,7 +7,6 @@ html {
   font-family: 'Ubuntu', sans-serif;
   background-color: #C2B9D2;}
 
-
 a:link {
     text-decoration: none;}
 
@@ -19,6 +18,11 @@ a:active {
 
 #banner {
   text-align: center;
+}
+
+a: visited {
+
+
 }
 
 /***************
@@ -38,6 +42,9 @@ Navigation
   padding:40px;
 }
 
+#nav a {
+color: #C9D6E8;}
+
 /***************
 Columns
 ************/
@@ -48,15 +55,21 @@ section {
   text-align: left;
   margin: 0px 10px 10px 30px;
   border: 3px double #000;
+  background-color: #C9D6E8;
+  padding: 0px 20px 0px 20px;
 }
 
 aside {
     float: left;
     width: 23%;
-    margin: 5px 10px 10px 30px;
+    margin: 0px 4px 0px 0px;
     border: 3px solid #000;
     background-color: #4F93E8;
+    padding-right:-10px;
   }
+
+aside a {
+color: #C9D6E8;}
 
 /***************
 Body
@@ -81,4 +94,13 @@ footer {
 
 .clear {
   clear:both;
+}
+
+/***************
+Contact
+************/
+
+#contact{
+padding-top: 5px;
+text-align: center;
 }
