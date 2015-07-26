@@ -71,6 +71,10 @@ aside {
 aside a {
 color: #C9D6E8;}
 
+aside li {
+list-style: none;
+}
+
 /***************
 Body
 ************/
