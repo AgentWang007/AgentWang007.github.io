@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wangstation Blog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../default.css">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quantico:700' rel='stylesheet' type='text/css'>
+  </head>
+  <header>
+    <ul id="nav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html"> Blog </a></li>
+      <li><a href="#"> Portfolio</a> </li>
+      <li><a href="#"> About Me </a></li>
+    </ul>
+    <div id="banner">
+      <img src="../imgs/banner.png" alt= "a banner for the Wangstation blog" title= "The Wangstation Blog">
+    </div>
+</header>
+
+<div id="wrapper">
+  <section>
+
+  <h1>Ruby Enumerables and Methods</h1>
+  <h2>#map</h2>
+  <h4>08/01/2015</h4>
+    <h4>Mapping out the #map</h4>
+    <p>
+      During this week, we were tasked with exploring ruby-docs in order to learn/try methods in order to solve problems. Although I didn't end up using #map this week for any of my problems, I was able to figure out that it was a very important ruby method that Rubyists seem to prefer using in their code. As a result, it behooves us to explore this method and figure out why it is so damn preferable.
+
+    </p>
+    <h4> What is it? </h4>
+    <p>
+        Ruby-docs says “the map method can be used to create a new array based on the original array, but with the values modified by the supplied block.” Okay.
+
+    <h4> So WHAT DOES IT MEAN? </h4>
+    <p>
+        Well, I guess it would be best to compare it to a much more familiar process which is the each method we are accustomed to. Recall that when we call #each, we are iterating over each element in an array or a hash. Well, #map essentially does the same thing as well.
+      </p>
+<pre><code>arr.map { |a| 2*a }</pre></code>
+ <pre><code>arr.each {|a| 2*a}</pre></code>
+<p>
+However, there is a big difference between #each and #map. Remember that each is not producing a new object or even affecting the original object. As a result, you could tell it to print the result of the code as it runs through it, but it ultimately returns the original array or hash that it started out with. Of course, you could create a new object by setting a variable to this method, but programmers prefer the easier, simpler functionality. Why do extra steps when you could get a very similar method that could also create an object?
+</p>
+<p>
+#map will iterate over your items like #each, but it also returns a new object albeit an array or a hash that reflects the code block applied  Instead of returning the original item it worked off, it will return a new product/form. This is useful for cutting down on pseudocode obviously and making more efficient code that is supposedly easier to read and debug. So consider our example from earlier.
+</p>
+
+<pre><code>arr= [1,3,5]</pre></code>
+<pre><code>arr.map { |a| 2*a } ==> [2,6,10] </pre></code>
+<pre><code>arr.each {|a| 2*a} ==>  [1,3,5] </pre></code>
+
+<p>
+As you can see, one returns the original while the other returns the result of the code block. Remember , we can incorporate arr. each in a way  so that it can return the same results. For example: </p>
+
+<pre><code>
+def twice_ply(number)
+  new = Array.new
+  number.each do | element |
+    new << 2*element
+  end
+  return new
+end
+</pre></code>
+
+<p> However, the map version would probably be simpler than this.</p>
+
+<pre><code>def twice_ply (number)
+number.map{| element |  2 *element |
+end</pre></code>
+
+<p> As you can see, one is way easier to read simply due to cutting down some steps.</p>
+  <p>
+        Thanks for reading!
+  </p>
+
+  </section>
+<aside>
+  <ul>
+    <li> <a href="#">Kotaku</a></li>
+    <li> <a href="#">Google</a></li>
+    <li> <a href="#">Blog</a></li>
+    <li> <a href="#">Destructoid</a></li>
+  </ul>
+</aside>
+</div>
+</body>
+
+<div class="clear"> </div>
+
+<footer>
+  <p> Copyright © 2015 Jason Wang <p>
+</footer>
+
+<div id="contact">
+
+  <a href="https://twitter.com/AgentWang007" class="twitter-follow-button" data-show-count="false">Follow @AgentWang007</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</div>
+
+</html>
