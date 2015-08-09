@@ -75,6 +75,11 @@ aside li {
 list-style: none;
 }
 
+#me {
+padding-top: 5%;
+text-align: center;
+}
+
 /***************
 Body
 ************/

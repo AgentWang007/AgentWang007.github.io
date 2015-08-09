@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wangstation Blog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../default.css">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quantico:700' rel='stylesheet' type='text/css'>
+  </head>
+  <header>
+    <ul id="nav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html"> Blog </a></li>
+      <li><a href="#"> Portfolio</a> </li>
+      <li><a href="#"> About Me </a></li>
+    </ul>
+    <div id="banner">
+      <img src="../imgs/banner.png" alt= "a banner for the Wangstation blog" title= "The Wangstation Blog">
+    </div>
+</header>
+
+<div id="wrapper">
+  <section>
+
+  <h1>Classes</h1>
+  <h2>Toy Factory Analogy</h2>
+  <h4>08/05/2015</h4>
+    <h4>Intro</h4>
+    <p>
+     Classes are blueprints. Imagine if classes were blueprints being made by a toy factory. Now, imagine if you own this factory and it is christmas time. Do you want the workers to basically create a new recipe in order to create slightly different variations on an action figure or a pony? NOPE. It’s not practical, right? It would make sense to have your workers to work off blueprint with some modifiable methods, right? This is class in a nutshell. It’s a giant blueprint to make objects!
+
+    </p>
+    <p>So how do we go about making a class? Well, it sort of looks like this:
+    </p>
+<pre><code>
+class Figures
+
+end
+</pre></code>
+
+    <p>
+    All classes start with a capital letter. In between the beginning and the end, you can throw in methods that you expect each object to perform. You can sort of think of it as making sure that all your action figures have pose-able limbs or shoot plastic projectiles. Within every class, you have to create a method called <strong> initialize </strong>. This is a necessary method that all you to make a new instance(object or toy) of the class! Therefore:
+    </p>
+<pre><code>
+class Figures
+def initialize (name)
+@name=name
+end
+end
+
+p Figures.new(‘Army_Joe')=>
+#<Figures:0x000000020e95a0 @name="Army_Joe">
+
+</pre></code>
+
+    <p>
+      There is our action figure (as a symbol)! However, it’s doesn’t do anything. How about we make it do something else? How about a talking function? We could call the method “speak.” It would make every instance of this class able to say a funny one-liner.
+
+    </p>
+
+<pre><code>
+class Figures
+def initialize (name)
+@name=name
+end
+  def speak
+  puts "hello #{@name}!"
+end
+end
+
+Joe=Figures.new("Joe")
+p Joe.speak = > “hello Joe!”
+
+</pre></code>
+
+  <p>
+
+As you can see, we created a product that says a phrase. We were able to do this by creating a method (which you can think of as a feature product on the toy) in the class (our blueprint). Now, you are probably staring at the @ in front of our variables and wondering what it is. @ are used to create special variables  that can be used within the class. Remember that local variables work within their environment, but can’t be applied outside of it. However, instance variables can be seen from within the class and by any instance of the class. You can think of it as each object  getting their own instance of the variable created in the class. Therefore, in our previous example, the instance (the figure we are making) gets his own copy of the variable (“Joe”).
+
+    </p>
+
+
+  <p>
+        Thanks for reading!
+  </p>
+
+
+  </section>
+<aside>
+  <ul>
+    <li> <a href="#">Kotaku</a></li>
+    <li> <a href="#">Google</a></li>
+    <li> <a href="#">Blog</a></li>
+    <li> <a href="#">Destructoid</a></li>
+  </ul>
+</aside>
+</div>
+</body>
+
+<div class="clear"> </div>
+
+<footer>
+  <p> Copyright © 2015 Jason Wang <p>
+</footer>
+
+<div id="contact">
+
+  <a href="https://twitter.com/AgentWang007" class="twitter-follow-button" data-show-count="false">Follow @AgentWang007</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</div>
+
+</html>
