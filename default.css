@@ -89,6 +89,11 @@ Body
   margin: 10px 10px 5px 80px;
 }
 
+#chart {
+  text-align: left;
+  max-width: 100%;
+}
+
 /***************
 Footer
 ************/

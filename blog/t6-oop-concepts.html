@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wangstation Blog</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../default.css">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quantico:700' rel='stylesheet' type='text/css'>
+  </head>
+  <header>
+    <ul id="nav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html"> Blog </a></li>
+      <li><a href="#"> Portfolio</a> </li>
+      <li><a href="#"> About Me </a></li>
+    </ul>
+    <div id="banner">
+      <img src="../imgs/banner.png" alt= "a banner for the Wangstation blog" title= "The Wangstation Blog">
+    </div>
+</header>
+
+<div id="wrapper">
+  <section>
+
+  <h1>Variable Scope</h1>
+  <h2>Where it goes and why it stays there</h2>
+  <h4>08/16/2015</h4>
+    <h4>What is the big deal?</h4>
+    <p>
+    Hi! At this point, ruby programming is based upon items such as methods, classes, and variables. We can all agree that we have nothing without these items. In particular, variables are integral to the programming language due to versatility. However, as with everything, there are different kinds of variables! Luckily, it isn't particularly difficult to understand what these variable types are, but it is difficult when faced with a giant error message staring you in the face! Let's get started!
+    </p>
+    <h4> Types </h4>
+    <p>
+    Scope is the key word to understanding variable type. If you can determine the scope, you can determine what kind of variable is in play. Look at the following:
+    </p>
+    <p> new_variable = "new variable!" </p>
+    <p>
+    By itself, it is harmless. However, if you define this variable within a method, a class, or inside a code block...well. You can see this for yourself: </p>
+
+      <pre><code>
+    def test_method
+      p new_variable = "new variable"
+    end
+
+    test_method #==>"new variable"
+    p new_variable #==> defined local
+    variable or method `new_variable'
+    for main:Objec
+     </pre></code>
+
+<p>
+  If you run test_method, it works perfectly fine because the variable was defined within the method "scope." However, you see that when you try to access new_variable outside this method, ruby cannot see this variable. It is staying inside this method and closed off from our typing hands! Let's look at a class example:
+</p>
+
+    <pre><code>
+  new_variable = "new variable"
+
+  class Test
+    p new_variable
+  end
+
+  #=>#NameError: undefined local variable or method
+     </pre></code>
+
+<p>
+We defined a the variable outside this class and are asking the class to p out this variable. Unfortunately for the class, this variable was made outside the class. Ruby doesn't have any idea what new_variable is inside the class because it wasn't defined and it certainly cannot read the variable made outside of it.
+</p>
+
+<p> As you figured out, the scope or placement of these variables determine their usability. For the examples, I applied local variables. Recall that the only successful example was when I defined local variable inside the method or referred to it directly outside of anything else. With this thought process in mind, let us consider a way to organize the different types of variables.
+</p>
+
+  <h4> Table to Organize it All </h4>
+
+<div id="chart">
+   <img src="../imgs/chart_variable.png" alt= "Variable Chart" title= "Variable Chart">
+</div>
+
+  <p>
+
+From this table (courtesty of the Ruby Wizardry), local variables are straight forward. Before moving onto @variable or instance, I want to quickly cover global and class variable. Global variables are signified by the $ and can be accessed from anywhere. However, it's a bit of a double-edged sword. Although it is extremely easy to access, it is also very easey to change since it is accessible from outside the code. This is pretty handy occasional if you are using an external file for instance.
+</p>
+<p>However, as a piece of code in a program, it could cause more trouble than anything. In regards to class variables, it's handy if you want to create a variable that all the instances are using. However, if you want each instance to have their own copy of the variable, it is necessary to use the instance variable instead. So to clarify, a class variable is one copy for the whole class.</p>
+<p>
+  An instance variable has a copy for each instance. Think of it as if a class variable is a pie and each instance of a class is a child. If you created a child and method called eat, each child would effect the single instance variable (the pie). This could be adding to the pie amount or decreasing the pie amount. However, in an instance variable, each child would be eating their own pie. In fact, you could have one child eating 1 pie or another eating 2 pies. It all depends on what you want to do with your class.
+    </p>
+
+  <p>
+  This is all for now! Have a great week! Study hard!
+  </p>
+
+  </section>
+<aside>
+  <ul>
+    <li> <a href="#">Kotaku</a></li>
+    <li> <a href="#">Google</a></li>
+    <li> <a href="#">Blog</a></li>
+    <li> <a href="#">Destructoid</a></li>
+  </ul>
+</aside>
+</div>
+</body>
+
+<div class="clear"> </div>
+
+<footer>
+  <p> Copyright © 2015 Jason Wang <p>
+</footer>
+
+<div id="contact">
+
+  <a href="https://twitter.com/AgentWang007" class="twitter-follow-button" data-show-count="false">Follow @AgentWang007</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</div>
+
+</html>
