@@ -1,0 +1,36 @@
+
+body {
+  background-color:#5AFF00;
+  font-family: 'Oswald', sans-serif;
+}
+
+#title {
+  background-color:;
+  text-align: center;
+  border: dotted;
+}
+
+#description {
+  text-align: center;
+  max-width: 50%;
+  margin-left: 26%;
+}
+
+article {
+  margin-left: 26%;
+  text-align: left;
+  max-width: 50%;
+  position: relative;
+}
+
+#basic {
+background-color:#0DFFDB;
+color: black;
+border: solid;
+margin: 2% 2% 2% 2%;
+padding: 1% 1% 1% 1%
+}
+
+footer {
+text-align: center;
+}
